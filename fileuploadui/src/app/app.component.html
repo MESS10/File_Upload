@@ -1,7 +1,33 @@
-<h1 style="text-align: center">Fun Of Heuristic File Uploader</h1>
 
+
+<section class="gallery">
+  <div class="container">
+    <div class="img-container">
+      <img src="/fileUpload_be/uploads" alt="Image" id="preview">
+      <div class="img-prev text-center">
+        <div class="img-slide active">
+          <img src="../assets/001.jpg" alt="Image1" DemoApp>
+        </div>
+        <div class="img-slide">
+          <img src="../assets/2.jpg" alt="Image2" DemoApp>
+        </div>
+        <div class="img-slide">
+          <img src="../assets/4.jpg" alt="Image3" DemoApp>
+        </div>
+        <div class="img-slide">
+          <img src="../assets/7.jpg" alt="Image4" DemoApp>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!--<h1 style="text-align: center">Fun Of Heuristic File Uploader</h1>
+
+SINGLE FILE UPLOAD
 <div style="text-align: center">
-  <form>      
+  <form>
     <div>
       <input type="file" name="image" (change)="selectImage($event)" />
     </div>
@@ -10,12 +36,12 @@
       <button type="submit" (click)="onSubmit()">Upload</button>
     </div>
   </form>
-</div>
+</div>-->
 
-<hr>
+
 <h2 style="text-align: center">Multiple</h2>
 <div style="text-align: center">
-  <form>      
+  <form>
     <div>
       <input type="file" name="images" multiple (change)="selectMultipleImage($event)" />
     </div>

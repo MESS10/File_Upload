@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+interface Image {
+  filename: string;
+  type: string;
+  thumbnailUrl: string;
+  originalUrl: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,12 +16,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   title = 'fileUpload';
-  images;
+  images:Image[] = [];
+  selectedImage: Image | null = null;
   multipleImages = [];
   constructor(private http: HttpClient){}
 
   ngOnInit(){
+    this.getImages();
+  }
+  getImages() {
+    this.http.get<Image[]>('http:Localhost:3010/uploads') // Replace with your actual endpoint URL
+      .subscribe(images => this.images = images);
+  }
 
+  selectImages(image: Image) {
+    this.selectedImage = image;
   }
 
   selectImage(event) {

@@ -20,8 +20,21 @@ const storage = multer.diskStorage({
     }
   })
   
-const upload = multer({ storage: storage })
+const upload = multer({ 
+  storage: storage,
+  limits:{fileSize:1000000},
+  fileFilter:function(req,file,cb){
+    checkFileType(file,cb);
+  }
+}).single('myImage');
    
+//check File type
+function checkFileType(file,cb){
+  //allowed ext
+  const filetypes = /jpeg|jpg/|/gif/;
+}
+
+
 //let upload = multer({ dest: 'uploads/' })
 
 app.get("/", (req, res) => {

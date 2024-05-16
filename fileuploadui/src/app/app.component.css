@@ -1,0 +1,26 @@
+.img-container{
+  width: 1000px;
+  height: 1009px;
+}
+
+.img-container img{
+  width: 100%;
+  height: 100%;
+}
+.img-prev{
+margin-top: 10px;
+}
+.img-slide{
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 2px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.active{
+  border: 4px solid #222;
+  opacity: 1;
+}
+
+
